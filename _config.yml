@@ -1,0 +1,45 @@
+title: My Blog
+description: A simple blog powered by Jekyll and GitHub Pages
+url: "https://dspaccapeli.github.io"
+baseurl: "/blog"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Pagination
+paginate: 5
+paginate_path: "/page:num/"
+
+# Plugins
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Permalink structure
+permalink: /:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

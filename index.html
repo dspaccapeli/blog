@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+{% for post in paginator.posts %}
+<article class="post">
+    <h2 class="post-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </h2>
+    <div class="post-meta">
+        {{ post.date | date: "%B %d, %Y" }}
+    </div>
+    <div class="post-excerpt">
+        {{ post.excerpt }}
+    </div>
+</article>
+{% endfor %}
+
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+    {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link">Previous</a>
+    {% endif %}
+
+    {% for page in (1..paginator.total_pages) %}
+        {% if page == paginator.page %}
+            <span class="pagination-link current">{{ page }}</span>
+        {% elsif page == 1 %}
+            <a href="{{ '/' | relative_url }}" class="pagination-link">{{ page }}</a>
+        {% else %}
+            <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="pagination-link">{{ page }}</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link">Next</a>
+    {% endif %}
+</div>
+{% endif %}
