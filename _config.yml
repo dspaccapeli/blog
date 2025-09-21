@@ -1,5 +1,5 @@
-title: spaccapeli
-description: a personal blog about tech, digital products, and startups
+title: daniele spaccapeli
+description: product builder writing about tech and tinkering on projects
 url: "https://dspaccapeli.github.io"
 baseurl: "/blog"
 
@@ -9,7 +9,7 @@ highlighter: rouge
 theme: minima
 
 # Pagination
-paginate: 5
+paginate: 10
 paginate_path: "/page:num/"
 
 # Plugins

@@ -2,31 +2,37 @@
 layout: default
 ---
 
-{% for post in paginator.posts %}
-<article class="post-item">
-    <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-    <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
-</article>
-{% endfor %}
+<div class="homepage-grid">
+    <section class="blogs-section">
+        <h2>Recent Posts</h2>
+        {% for post in paginator.posts limit:10 %}
+        <article class="post-item">
+            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+            <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
+        </article>
+        {% endfor %}
 
-{% if paginator.total_pages > 1 %}
-<div class="pagination">
-    {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | relative_url }}" class="pagination-link">Previous</a>
-    {% endif %}
+        <div class="view-all">
+            <a href="{{ '/posts' | relative_url }}" class="view-all-link">View all posts →</a>
+        </div>
+    </section>
 
-    {% for page in (1..paginator.total_pages) %}
-        {% if page == paginator.page %}
-            <span class="pagination-link current">{{ page }}</span>
-        {% elsif page == 1 %}
-            <a href="{{ '/' | relative_url }}" class="pagination-link">{{ page }}</a>
-        {% else %}
-            <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="pagination-link">{{ page }}</a>
-        {% endif %}
-    {% endfor %}
+    <section class="projects-section">
+        <h2>Highlighted Projects</h2>
+        {% for project in site.data.projects limit:3 %}
+        <article class="project-item">
+            <h3><a href="{{ project.url }}" class="project-link">{{ project.title }}</a></h3>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-tech">
+                {% for tech in project.tech %}
+                <span class="tech-tag">{{ tech }}</span>
+                {% endfor %}
+            </div>
+        </article>
+        {% endfor %}
 
-    {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | relative_url }}" class="pagination-link">Next</a>
-    {% endif %}
+        <div class="view-all">
+            <a href="https://buildusefulstuff.com" class="view-all-link">See more projects →</a>
+        </div>
+    </section>
 </div>
-{% endif %}

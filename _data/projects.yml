@@ -1,0 +1,14 @@
+- title: "Manafront"
+  description: "A digital collectible card game where player play live between each other with custom decks"
+  url: "https://manafront.com"
+  tech: ["React JS", "Node JS", "Durable Objects", "Websockets"]
+
+- title: "Jimmy the Cricket"
+  description: "Browser-based meeting recorder that augments your notes with AI and your meetings' contexts"
+  url: "https://jimmycricket.com"
+  tech: ["Vue JS", "PHP", "Docker", "Mediarecorder API",]
+
+- title: "Health Notes Pro"
+  description: "AI assistant for healthcare professionals writing SOAP notes to import into their EHR"
+  url: "https://healthnotespro.com"
+  tech: ["Vue JS", "IndexedDB", "Laravel", "Docker"]
