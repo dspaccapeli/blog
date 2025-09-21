@@ -5,7 +5,7 @@
 
 - title: "Jimmy the Cricket"
   description: "Browser-based meeting recorder that augments your notes with AI and your meetings' contexts"
-  url: "https://jimmycricket.com"
+  url: "https://jimmythecricket.com"
   tech: ["Vue JS", "PHP", "Docker", "Mediarecorder API",]
 
 - title: "Health Notes Pro"
