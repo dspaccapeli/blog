@@ -14,10 +14,7 @@
             <h1 class="site-title">
                 <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
             </h1>
-            <nav>
-                <a href="{{ '/' | relative_url }}">Home</a>
-                <a href="{{ '/about' | relative_url }}">About</a>
-            </nav>
+            <p class="site-description">{{ site.description }}</p>
         </div>
     </header>
 
@@ -27,7 +24,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</p>
+            <p>&copy; {{ 'now' | date: "%Y" }} {{ site.title }} | <a href="{{ '/about' | relative_url }}">about</a></p>
         </div>
     </footer>
 </body>
